@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import InputTodo from './containers/InputTodo';
+import TodoController from './containers/TodoController';
+import ViewTodo from './containers/ViewTodo';
+import './todo.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {/* Component through which user is able to add the Todos */}
+     <InputTodo/>
+      {/* Component which renders the Todos based on the option selected */}
+     <TodoController/>
+     {/* Component handles the Todo views based on the status of the tasks */}
+     <ViewTodo/> 
     </div>
   );
 }

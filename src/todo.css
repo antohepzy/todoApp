@@ -1,0 +1,199 @@
+body{
+    background-color:#AAAAAA;
+}
+
+/* Setting the Container for the Todo Input and View region */
+.container{
+    width: 50vw;
+    background-color:#484646;
+    margin-top: 5vh;
+    margin: 0 auto;
+    box-shadow: 1px 2px 3px 2px rgb(219, 217, 217);
+    text-align: center;
+}
+
+h1{
+ color: #83E72A; 
+ text-transform: uppercase;
+ font-family: 'Candara'; 
+ font-weight:bolder;
+ font-size: 2.5em;
+ padding-top: 10px;;
+}
+
+/* Styling the addTodo Component */
+.textArea{
+ width: 70%;
+ height:5vh;
+ color:#8CCDFF;
+ text-transform: capitalize;
+ font-size: large;
+ border-color:rgb(235, 238, 232);
+ border-width: 3px;
+}
+
+.textArea:focus{
+    border-color:transparent !important;
+    outline-color:transparent !important;
+}
+
+::placeholder{
+color:#8CCDFF;
+text-transform: capitalize;
+font-family: 'Comic Sans MS'; 
+font-size: large;
+}
+
+/* Styling the TodoController  */
+.listArea{
+    width:71%;
+    margin:0 auto;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+    margin:0px;
+}
+
+/* Styling the TodoList Component */
+.task{
+    margin-top:10px;
+    display: flex;
+    border-bottom: 1px solid #939393;
+}
+
+.clear{
+    padding:5px;
+    margin-left: auto;
+    color:transparent;
+    background-color: transparent;
+    border-style:none;
+}
+
+
+
+.main { 
+    display: block; 
+    position: relative; 
+    border-bottom:3px white;
+    padding-left: 45px; 
+    margin-bottom: 15px; 
+    cursor: pointer; 
+    font-size:1.5em;
+    font-weight:bolder;
+    font-size: 20px; 
+    font-family: 'Comic Sans MS'; 
+    text-transform: capitalize;
+    
+} 
+
+.task:hover .main ~ .clear{
+    padding:5px;
+    margin-left: auto;
+    color:tomato;
+    font-size: 1.5em;
+    font-weight:bolder;
+    background-color: transparent;
+    border-style:none; 
+}
+  
+/* Hide the default checkbox */ 
+input[type=checkbox] { 
+    visibility: hidden; 
+} 
+  
+/* Creating a custom checkbox 
+based on demand */ 
+.geekmark { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 25px; 
+    width: 25px; 
+    border-radius: 50%;
+    background-color:transparent; 
+} 
+  
+/* Background color to be 
+shown when hovering over checkbox */ 
+.main:hover input ~ .geekmark { 
+    background-color: #91FF2F;
+} 
+  
+
+  
+/* Background color to be 
+shown when checkbox is checked */ 
+.main input:checked ~ .geekmark { 
+    background-color: rgb(126, 214, 25); 
+} 
+  
+/* Checkmark to be shown in checkbox */ 
+.geekmark:after { 
+    content: ""; 
+    position: absolute; 
+    display: none; 
+} 
+  
+/* Display checkmark when checked */ 
+.main input:checked ~ .geekmark:after { 
+    display: block; 
+} 
+  
+/* Styling the checkmark */ 
+
+.main .geekmark:after { 
+    left: 8px; 
+    bottom: 5px; 
+    width: 6px; 
+    height: 12px; 
+    border: solid white; 
+    border-width: 0 4px 4px 0; 
+    -webkit-transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); 
+    transform: rotate(45deg); 
+} 
+
+/* Styles for the ViewTodo Component */
+.footer{
+    width:70%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:5vh;
+    padding:5px;
+    margin-left:15%;
+    margin-bottom:10px;
+    
+}
+
+.footer h3{
+    text-transform: capitalize;
+    color:#FFCB4F;
+    font-family: 'Candara'; 
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+.option{
+    border:transparent;
+    background-color: transparent;
+    cursor: pointer;
+    color:grey;
+    font-family: 'Candara'; 
+    font-size:1.1em;
+    font-weight: bold;
+}
+
+.option:active{
+    border-color:orange !important;
+    outline-color:orange !important;
+}
+
+.option:focus{
+    border-color:orange !important;
+    outline-color:orange !important;
+}
+
+
