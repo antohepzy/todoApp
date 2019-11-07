@@ -40,7 +40,7 @@ h1{
 ::placeholder{
 color:#8CCDFF;
 text-transform: capitalize;
-font-family: 'Comic Sans MS'; 
+font-family: 'Candara'; 
 font-size: large;
 }
 
@@ -83,7 +83,7 @@ ul{
     font-size:1.5em;
     font-weight:bolder;
     font-size: 20px; 
-    font-family: 'Comic Sans MS'; 
+    font-family: 'Candara'; 
     text-transform: capitalize;
     
 } 
@@ -168,7 +168,7 @@ shown when checkbox is checked */
     
 }
 
-.footer h3{
+ h3{
     text-transform: capitalize;
     color:#FFCB4F;
     font-family: 'Candara'; 
@@ -182,7 +182,7 @@ shown when checkbox is checked */
     cursor: pointer;
     color:grey;
     font-family: 'Candara'; 
-    font-size:1.1em;
+    font-size:1em;
     font-weight: bold;
 }
 
