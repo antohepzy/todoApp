@@ -4,6 +4,8 @@ export const CHECKOUT_TODO = "CHECKOUT_TODO";
 export const DELETE_TODO = "DELETE_TODO";
 export const TODO_OPTIONS = "TODO_OPTIONS";
 export const DELETE_TODOS = "DELETE_TODOS";
+export const EDIT_OPTION = "EDIT_OPTION";
+export const EDIT_TODO = "EDIT_TODO";
 
 //initializing TODO ID
 let todo_ID = 0;
@@ -30,6 +32,22 @@ export const deleteTodo = (id) =>{
     return{
         type: DELETE_TODO,
         payload:id
+    }
+}
+
+//action creator toggle edit of the selected Task
+export const editOption = (id) =>{
+    return{
+        type: EDIT_OPTION,
+        payload:id
+    }
+}
+
+//action creator to edit the task
+export const editTodo = (id,text) =>{
+    return{
+        type: EDIT_TODO,
+        payload:{id,text}
     }
 }
 

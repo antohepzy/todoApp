@@ -15,9 +15,9 @@ class InputTodo extends Component {
                     //The task which the user entered is passed to the action
                     addTodo(this.refs.task.value);
                     this.refs.task.value = ""; }}>
-                <h1>Todos</h1>
+                
                 {/* User Input Area to enter the task */}
-                <input type="text" ref="task" className="textArea" placeholder="Things to do"/>
+                <input type="text" ref="task" className="textArea" placeholder="Add your Todos here!!"/>
                 </form>
             </div>
         )

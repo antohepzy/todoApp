@@ -2,7 +2,9 @@ import { ADD_TODO,
          CHECKOUT_TODO,
          DELETE_TODO,
          TODO_OPTIONS,
-         DELETE_TODOS } from '../actions';
+         DELETE_TODOS,
+         EDIT_OPTION,
+         EDIT_TODO } from '../actions';
 
 // Initializing default state
 const defaultState = {
@@ -18,8 +20,9 @@ export default (state = defaultState , action) =>{
             return{
                 ...state,
                 todos:[...state.todos,{id:action.payload.id,
-                                        todo:action.payload.todo,
-                                        status:false}]
+                                       todo:action.payload.todo,
+                                       status:false,
+                                       edit:false}]
             }
         
         //The status of the selected task is changed to either true or false based on the user selection.
@@ -46,6 +49,43 @@ export default (state = defaultState , action) =>{
                         ...state,
                         todos:delTask
                     }
+
+        //Selected Todo edit state is changed toggled.
+        case EDIT_OPTION:
+            let editOption = state.todos.map(todo=>{
+                if(todo.id === action.payload)
+                {
+                        return Object.assign({}, todo , {
+                        edit: !todo.edit
+                    })
+                }
+                return todo;
+            })
+        // The state is returned to update in the store.
+            return {
+                ...state,
+                todos:editOption
+            }
+        
+        //To edit the individual task 
+           case EDIT_TODO:
+               
+                    let editTodo = state.todos.map(todo=>{
+                    if(todo.id === action.payload.id)
+                    {
+                            return Object.assign({}, todo , {
+                            edit: !todo.edit,
+                            todo: action.payload.text
+                        })
+                    }
+                   
+                    return todo;
+                })
+            // The state is returned to update in the store.
+                return {
+                    ...state,
+                    todos:editTodo
+                }
         
         //Todo options are set to either view all tasks or view completed task or view pending based on the user selection.
         case TODO_OPTIONS:

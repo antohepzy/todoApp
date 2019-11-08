@@ -8,7 +8,7 @@ class TodoController extends Component{
         let {option,todos} = this.props;
         return(
             <div className="listArea">
-                <ul>
+            
                     {
                         
                         (option === "all")
@@ -26,7 +26,7 @@ class TodoController extends Component{
                          <TodoList todo = {todos.filter(task=>task.status)}/>
                     }
                 
-                </ul>
+             
             </div>
         )
     }
