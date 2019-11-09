@@ -32,7 +32,8 @@ class TodoList extends Component{
                                         :
                                     
                                     <label className="main" 
-                                    style={{color:(task.status)? "rgb(126, 214, 25)" : "#3F81FA"}} onDoubleClick={()=>editOption(task.id)}>{task.todo}
+                                    style={{color:(task.status)? "lightgrey" : "black",
+                                    textDecoration:(task.status)? "line-through" : "black"}} onDoubleClick={()=>editOption(task.id)}>{task.todo}
                                     {/* Dispatches the checkout todo action */}
                                     <input type="checkbox" onClick={()=>checkoutTodo(task.id)} /> 
                                     <span className="geekmark"></span> 

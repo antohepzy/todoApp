@@ -4,12 +4,14 @@ import { ADD_TODO,
          TODO_OPTIONS,
          DELETE_TODOS,
          EDIT_OPTION,
-         EDIT_TODO } from '../actions';
+         EDIT_TODO,
+         CHECKOUT_ALL } from '../actions';
 
 // Initializing default state
 const defaultState = {
     todos:[],
-    option:"all"
+    option:"all",
+    flag:false
 }
 
 //Reducer function for the various action types
@@ -101,6 +103,32 @@ export default (state = defaultState , action) =>{
                    ...state,
                    todos:delTasks
                 }
+
+        case CHECKOUT_ALL:
+                let chckAll = state.todos.map(todo=>{
+                        console.log(todo);
+                        if(!action.payload)
+                        {
+                                return Object.assign({}, todo , {
+                                status: true
+                            })
+                        }
+                        else{
+                            return Object.assign({}, todo , {
+                                status: false
+                            })
+                        }
+                  
+                })
+                console.log(chckAll);
+            // The state is returned to update in the store.
+                return {
+                    ...state,
+                    todos:chckAll,
+                    flag:!state.flag
+                }
+            
+
         //default case if none of the options match
         default:
             return state

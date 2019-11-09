@@ -19,8 +19,13 @@ class ViewTodo extends Component {
     render(){
         let {todoOptions,deleteCompleted,todos} = this.props;
         return(
-            <div className="footer">
-                <h3>{this.taskCount()} left</h3>
+            <div>
+            {
+                (todos.length>0)
+                ?
+               
+                <div className="footer">
+        <button className="option">{this.taskCount()===1 ? `${this.taskCount()} item` :  `${this.taskCount()} items`} left </button>
                 {/* Dispatch todoOption to show all todos */}
                 <button className="option" onClick={()=>todoOptions("all")}>Show All</button>
                 {/* Dispatch todoOption to show completed todos  */}
@@ -36,7 +41,14 @@ class ViewTodo extends Component {
                     :
                     null
                 }  
-            </div>
+                
+                </div>
+                
+              
+                :
+                null
+            }
+           </div>
         )
 
     }

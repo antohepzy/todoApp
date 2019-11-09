@@ -1,69 +1,82 @@
 body{
     height:100%;
+    background-color: rgb(238, 238, 238);
 }
-.note{
-    margin-top:20px;
-    margin-left:15px;
-}
+
 .header{
     width:100vw;
     height:5vw;
-    background-color: black;
-    border-radius: 2px;
-    display: flex;
 }
 
 .content{
     height:80vh;
-    
 }
 
 /* Setting the Container for the Todo Input and View region */
 .container{
-    width: 70vw;
-    min-height: 40vh;
-    background-color:lightgrey;
-    margin-top: 10px;
+    width: 50vw;
+    background-color:rgb(255, 255, 255);
     margin: 0 auto;
-    box-shadow: 1px 2px 3px 2px rgb(219, 217, 217);
+    margin-top: 5%;
+    box-shadow: 1px 2px 5px 1px rgb(219, 217, 217);
     text-align: center;
     display:flex;
     flex-direction: column;
+    z-index: initial;
 }
 
+.arrow{
+    border:transparent;
+    outline:transparent;
+    background-color:transparent;
+}
+.down {
+    border: solid grey;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 6px;
+    margin-left:5px;
+    margin-bottom:2px;
+    transform: rotate(45deg);
+    }
+
+
+
 h1{
- color: #83E72A; 
- text-transform: capitalize;
- font-family: 'Candara'; 
- font-weight:bolder;
- font-size: 5vw;
-  margin:0px;
- margin-top:-10px;
-text-align: end;
-width: 50%;
+ color: rgb(209, 179, 183); 
+ font-size: 5vw;  
+ text-align: center;
 }
 
 /* Styling the addTodo Component */
-.textArea{ margin-top:5%;
- width: 70%;
- height:5vh;
- color:lightskyblue;
- text-transform: capitalize;
- font-size: large;
- border-width: 3px;
+.textArea{ 
+ width: 100%;
+ height:10vh;
+ box-shadow: .8px .8px .8px .8px lightgray;
+ }
+
+.inputText{
+    width: 80%;
+    height:9vh;
+    font-size:1.5vw;
+    text-align: justify;
+    margin-left: 10%; 
+    border:transparent; 
+}
+.inputText:focus{  
+ outline:transparent !important;
 }
 
 ::placeholder{
-color:lightskyblue;
-text-transform: capitalize;
-font-family: 'Candara'; 
-font-size: large;
+    color:lightgrey;
+    font-style: italic;
+    font-size:1.5vw;
 }
 
 /* Styling the TodoController  */
 .listArea{
-    width:71%;
-    margin:0 auto;
+    width: 100%;
+   
 }
 
 ul{
@@ -74,9 +87,11 @@ ul{
 
 /* Styling the TodoList Component */
 .task{
-    margin-top:10px;
+   
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
-    border-bottom: 1px solid #939393;
+    border-bottom: 1px solid #f0e6e6;
 }
 
 .clear{
@@ -87,30 +102,23 @@ ul{
     border-style:none;
 }
 
-
-
 .main { 
     display: block; 
     position: relative; 
-    border-bottom:3px white;
-    padding-left: 10%; 
-    margin-bottom: 2px; 
-    padding-bottom: 5px;
+    padding-left: 15%; 
     cursor: pointer; 
+    color: rgb(73, 71, 71);
     font-size:2vw;
-    font-weight:bolder;
-    font-family: 'Candara'; 
     text-transform: capitalize;
-    
+      
 } 
 
 .task:hover .main ~ .clear{
-    
     margin-bottom:1%;
     margin-left: auto;
-    color:tomato;
-    font-size: 2vw;
-    font-weight:bolder;
+    color:rgb(153, 69, 54);
+    font-size: 1.2vw;
+    font-weight: bold;
     background-color: transparent;
     border-style:none; 
 }
@@ -124,18 +132,19 @@ input[type=checkbox] {
 based on demand */ 
 .geekmark { 
     position: absolute; 
-    top: 5px; 
-    left: 0; 
-    height: 25px; 
-    width: 25px; 
+    top: 2px; 
+    left: 20px; 
+    height: 35px; 
+    width: 35px; 
     border-radius: 50%;
-    background-color:transparent; 
+    border:2px solid rgb(243, 235, 235);
+    background-color:none;
 } 
   
 /* Background color to be 
 shown when hovering over checkbox */ 
 .main:hover input ~ .geekmark { 
-    background-color: #91FF2F;
+    background-color: none;
 } 
   
 
@@ -143,7 +152,7 @@ shown when hovering over checkbox */
 /* Background color to be 
 shown when checkbox is checked */ 
 .main input:checked ~ .geekmark { 
-    background-color: rgb(126, 214, 25); 
+    border:1px solid rgb(109, 187, 178);
 } 
   
 /* Checkmark to be shown in checkbox */ 
@@ -157,16 +166,17 @@ shown when checkbox is checked */
 .main input:checked ~ .geekmark:after { 
     display: block; 
 } 
-  
+
+
 /* Styling the checkmark */ 
 
 .main .geekmark:after { 
-    left: 8px; 
-    bottom: 5px; 
-    width: 6px; 
-    height: 12px; 
-    border: solid white; 
-    border-width: 0 4px 4px 0; 
+    left: 13px; 
+    bottom: 8px; 
+    width: 8px; 
+    height: 20px; 
+    border: solid rgb(67, 238, 15); 
+    border-width: 0 2px 2px 0; 
     -webkit-transform: rotate(45deg); 
     -ms-transform: rotate(45deg); 
     transform: rotate(45deg); 
@@ -174,35 +184,28 @@ shown when checkbox is checked */
 
 /* Styles for the ViewTodo Component */
 .footer{
-    width:70%;
+    width:90%;
     display:flex;
-    justify-content: space-between;
-    align-items: center;
-    height:5vh;
-    padding:5%;
-    margin-left:10%;
-    margin-top:auto;
-    margin-bottom:10px;
-    
-}
-
- h3{
-    text-transform: capitalize;
-    color:orange;
-    font-family: 'Candara'; 
-    font-size:1.5vw;
-    font-weight: bold;
+    padding-left:10%;
+    text-align: center;
+    box-shadow: 0 1px 1px rgb(219, 217, 217),
+        0 8px 0 -3px white,
+        0 9px 1px -3px rgb(219, 217, 217),
+        0 16px 0 -6px white,
+        0 17px 2px -6px rgb(219, 217, 217)
 }
 
 .option{
     border:transparent;
-    text-transform: uppercase;
+    text-transform: capitalize;
     background-color: transparent;
     cursor: pointer;
-    color:#550000;;
+    color:gray;
     font-family: 'Candara'; 
     font-size:1vw;
-    
+    height:fit-content;
+    padding:5px 20px !important;
+    margin-top:10px;
 }
 
 .option:active{
@@ -234,7 +237,7 @@ h4{
 .copyright {
     color: #968B87;
     font-size: 1rem;
-    margin-top:auto;
+    margin-top:100px;
     text-align: center;
  
  }
@@ -294,5 +297,4 @@ h4{
         border-width: 0 2px 2px 0; 
     }
   } 
-
 

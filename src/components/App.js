@@ -11,8 +11,6 @@ function App() {
   return (
     <div>
       <Header/>
-      <div className="content">
-        <h4>Organise it all with Todos!!</h4>
         <div className="container">
         {/* Component through which user is able to add the Todos */}
         <InputTodo/>
@@ -21,7 +19,7 @@ function App() {
         {/* Component handles the Todo views based on the status of the tasks */}
         <ViewTodo/> 
         </div>
-      </div>
+     
       <Footer />
     </div>
   );

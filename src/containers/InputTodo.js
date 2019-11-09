@@ -1,12 +1,12 @@
 import React , {Component} from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions';
+import { addTodo,checkOutAll } from '../actions';
 import '../todo.css';
 
 class InputTodo extends Component {
    
     render(){
-       let {addTodo} = this.props;
+       let {addTodo,checkOutAll,flag,todos} = this.props;
         return(
             <div>
                 {/* Form submit dispatches the addTodo action which calls the reducer and adds the todo to the state */}
@@ -17,7 +17,19 @@ class InputTodo extends Component {
                     this.refs.task.value = ""; }}>
                 
                 {/* User Input Area to enter the task */}
-                <input type="text" ref="task" className="textArea" placeholder="Add your Todos here!!"/>
+                <div  className="textArea" >
+                    {
+                        (todos.length>0)
+                        ?
+                        
+                        <button type="reset"  className="arrow" onClick={()=>checkOutAll(flag)}><span className="down"></span>
+                        </button>
+                        :
+                        null
+                    }
+               
+                <input type="text" ref="task" className= "inputText" placeholder="What needs to be done?"/>
+                </div>
                 </form>
             </div>
         )
@@ -25,10 +37,13 @@ class InputTodo extends Component {
     
 }
 
+const mapStateToProps = state => state
+
 //Exposes the addTodo action creator
 const mapDispatchToProps = {
-    addTodo
+    addTodo,
+    checkOutAll
 }
 
 //Connects the dispatch function with the props and provides it to the InputTodo component
-export default connect(null,mapDispatchToProps) (InputTodo);
+export default connect(mapStateToProps,mapDispatchToProps) (InputTodo);

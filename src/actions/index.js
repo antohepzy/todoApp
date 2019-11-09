@@ -6,6 +6,7 @@ export const TODO_OPTIONS = "TODO_OPTIONS";
 export const DELETE_TODOS = "DELETE_TODOS";
 export const EDIT_OPTION = "EDIT_OPTION";
 export const EDIT_TODO = "EDIT_TODO";
+export const CHECKOUT_ALL = "CHECKOUT_ALL";
 
 //initializing TODO ID
 let todo_ID = 0;
@@ -64,5 +65,13 @@ export const deleteCompleted = () =>{
     return{
         type:DELETE_TODOS,
         payload:null
+    }
+}
+
+//action creator to check and uncheck all the tasks which are completed.
+export const checkOutAll = (flag) =>{
+    return{
+        type:CHECKOUT_ALL,
+        payload:flag
     }
 }
